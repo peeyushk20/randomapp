@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: peeyushkrandomapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: peeyushkrandomapp
+  template:
+    metadata:
+      labels:
+        app: peeyushkrandomapp 
+    spec:
+      containers:
+        - name: peeyushkrandomapp 
+          image: randomapp.azurecr.io/peeyushkrandomapp
+          ports:
+          - containerPort: 80
